@@ -1,0 +1,12 @@
+RewriteEngine On
+
+#RewriteCond %{HTTP:X-Requested-With} XMLHttpRequest
+#RewriteRule ^(.*)$ api.php?link=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?link=$1 [L,QSA]
+
+#RewriteRule .* index.php [L]
+#RewriteRule ^index.php$ / [QSA,R]
+
